@@ -1,12 +1,11 @@
 {
   "name": "base-config-webpack-plugin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "webpack基础配置plugin",
   "license": "MIT",
   "author": "huang",
   "main": "./index.js",
   "types": "./index.js",
-  
   "scripts": {
     "release": "release-it"
   },
