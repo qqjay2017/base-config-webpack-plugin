@@ -1,6 +1,6 @@
 {
   "name": "base-config-webpack-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "webpack基础配置plugin",
   "license": "MIT",
   "author": "huang",
