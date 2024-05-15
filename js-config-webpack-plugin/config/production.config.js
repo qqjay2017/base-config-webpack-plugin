@@ -4,7 +4,7 @@ const { resolveRoot } = require('../../utils')
 const path = require('path')
 function resolveCacheDirectory({cacheDir}){
   if(cacheDir){
-    return cacheDir
+    return  path.join(cacheDir,"./babel-loader")
   }
   return resolveRoot( 'node_modules/.cache/babel-loader')
 

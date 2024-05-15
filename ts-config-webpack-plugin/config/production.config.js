@@ -1,7 +1,7 @@
 const os = require("os");
 
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-
+const path = require('path')
 const { resolveRoot } = require("../../utils.js");
 /**
  *
@@ -13,7 +13,7 @@ const { resolveRoot } = require("../../utils.js");
 
 function resolveCacheDirectory({cacheDir}){
   if(cacheDir){
-    return cacheDir
+    return path.join(cacheDir,"./tsconfig.tsbuildinfo")
   }
   return  resolveRoot( 'node_modules/.cache/tsconfig.tsbuildinfo')
 
