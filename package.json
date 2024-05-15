@@ -6,6 +6,7 @@
   "author": "huang",
   "main": "./index.js",
   "types": "./index.js",
+  
   "scripts": {
     "release": "release-it"
   },
@@ -79,5 +80,9 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
   },
-  "clean-package": "./clean-package.config.json"
+  "clean-package": "./clean-package.config.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qqjay2017/base-config-webpack-plugin.git"
+  }
 }
