@@ -16,15 +16,6 @@ exports = module.exports = (options) => ({
         test: /\.(tsx?|d\.ts)$/,
         use: [
           {
-            // run compilation threaded
-            loader: require.resolve("thread-loader"),
-            options: {
-              // https://github.com/webpack-contrib/thread-loader
-              workers: os.cpus().length - 1,
-              poolTimeout: Infinity,
-            },
-          },
-          {
             // main typescript compilation loader
             loader: require.resolve("ts-loader"),
             options: {
@@ -61,7 +52,9 @@ exports = module.exports = (options) => ({
             declarationMap: false,
             noEmit: true,
             incremental: true,
-            tsBuildInfoFile: resolveRoot( 'node_modules/.cache/tsconfig.tsbuildinfo'),
+            tsBuildInfoFile: resolveRoot(
+              "node_modules/.cache/tsconfig.tsbuildinfo"
+            ),
           },
         },
         // Set the tsconfig.json path

@@ -1,7 +1,7 @@
 const os = require("os");
 
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const path = require('path')
+const path = require("path");
 const { resolveRoot } = require("../../utils.js");
 /**
  *
@@ -11,12 +11,11 @@ const { resolveRoot } = require("../../utils.js");
  * @returns {{ module: { rules : Array<any> }, plugins: Array<(new (): any)> }}
  */
 
-function resolveCacheDirectory({cacheDir}){
-  if(cacheDir){
-    return path.join(cacheDir,"./tsconfig.tsbuildinfo")
+function resolveCacheDirectory({ cacheDir }) {
+  if (cacheDir) {
+    return path.join(cacheDir, "./tsconfig.tsbuildinfo");
   }
-  return  resolveRoot( 'node_modules/.cache/tsconfig.tsbuildinfo')
-
+  return resolveRoot("node_modules/.cache/tsconfig.tsbuildinfo");
 }
 exports = module.exports = (options) => ({
   module: {
@@ -35,14 +34,14 @@ exports = module.exports = (options) => ({
           // 		),
           // 	},
           // },
-          {
-            // run compilation threaded
-            loader: require.resolve("thread-loader"),
-            options: {
-              // there should be 1 cpu for the fork-ts-checker-webpack-plugin
-              workers: os.cpus().length - 1,
-            },
-          },
+          // {
+          //   // run compilation threaded
+          //   loader: require.resolve("thread-loader"),
+          //   options: {
+          //     // there should be 1 cpu for the fork-ts-checker-webpack-plugin
+          //     workers: os.cpus().length - 1,
+          //   },
+          // },
           {
             // main typescript compilation loader
             loader: require.resolve("ts-loader"),
